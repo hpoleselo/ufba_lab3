@@ -5,9 +5,9 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
-\title{Projeto Termômetro}
+\title{Projeto Termômetro por um Diodo}
 \author{Henrique Poleselo e Rodrigo Canário}
-\date{March 2019}
+\date{UFBA - March 2019}
 
 \begin{document}
 
@@ -29,6 +29,27 @@ O trabalho começa no FPGA, onde iremos implementar um algorítmo de Aproximaç�
 
 \section{Simulação Conversor AD}
 Usaremos as redes R-2R, que nos fornecem a possibilidade de conseguir variar níveis de tensão de acordo com as disposições dos resistores, i.e usando uma rede R-2R de 7 bits obteremos: 2(elevado)7 128 valores possiveis pra dividir a tensão de entrada. Como queremos medir de 0 100 graus com passo de 1 grau, então um R-2R de 7 bits será suficiente. Na saída da rede R2R iremos ter um ampop comparador para pegar esses valores de tensão e iremos "filtra-lo". Assim, teremos uma relação tensão-temperatura.
+
+Queremos 12.7V na saída do ampop, começamos alimentando o AMPOP com 12.7V porém a saída, devido à perdas e à todo nosso sistema, possuia sempre aproximadamente -2V do que era inserido. Ou seja, precisávamos aumentar a entrada pra 14.7V de forma que ajustasse a saída do amplificador operacional com 12.7V. Após o encontro com Marcio vimos que de fato é um jargão: se você quer uma saída x de um amplificador operacional, alimente com x + 2V de forma a obter seu x na saída.
+
+% inserir foto da simulacao
+
+
+\section{Montagem Conversor AD}
+Alimentação de tensão simétrica: precisavamos dos +14.7V e -14.7V para a alimentação do Ampop, para isso usamos a fonte de bancada que possui duas saídas de tensão, como mostrado na foto abaixo.
+\begin{center}
+    \includegraphics[scale=0.2]{images/fonte.jpeg}
+    
+    Imagem 2: Fonte de bancada com duas saídas.
+\end{center}
+
+Para obter a tensão simétrica precisamos realizar a ligação indicada pelo verde na foto, i.e (+ com -), essa ligação será nosso novo 0. enquanto que o cabo preto na extrema esquerda será nosso menor nível de tensão, que é -15V. Para a configuração ficar correta precisamos apertar o botão vermelho que está circulado em amarelo na imagem acima (ele ativa a ligação interna da fonte pra criar uma fonte simétrica). PS: acabmos errando isso no nosso experimento mas nessa fonte de bancada, elas funcionam sempre como uma "fonte de potência", i.e não adianta só fornecer tensão ao circuito, e sim fornecer o mínimo de corrente também (seguindo a relação $P=VI$) de forma que o circuito em questão seja realmente alimentado.
+
+\begin{center}
+    \includegraphics[scale=0.2]{images/montagem_dac.jpeg}
+    
+    Imagem 3: Montagem do DAC na protoboard.
+\end{center}
 
 
 \end{document}

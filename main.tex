@@ -51,5 +51,20 @@ Para obter a tensão simétrica precisamos realizar a ligação indicada pelo ve
     Imagem 3: Montagem do DAC na protoboard.
 \end{center}
 
+\section{Caracterização da Curva}
+Sabe-se que pra um diodo convencional, a corrente mínima necessária pra sua operação é $20mA$. Como no nosso projeto já há uma tensão alimentando todo o sistema, que é de 12.7V, usaremos a mesma pra alimentar o circuito de sensoriamento, i.e o diodo e o resistor associado para o controle da corrente $Id$. Então, pela lei de Ohm conseguimos determinar qual a resistência necessária: $R=V/I$ $R=12.7/20*10^10-3$
+
+Iremos medir a temperatura usando um termopar, o termopar em questão é um dispositivo que é ligado diretamente ao multímetro e consegue medir a temperatura com uma certa precisão. O termopar em questão foi calibrado pra ser utilizado com o multímetro já mostrado.
+
+\begin{center}
+    \includegraphics[scale=0.2]{images/termopar.jpg}
+    
+    Imagem 4: Termopar, note que a ponta em preto possui um contato, este ficará sempre em contato com o diodo para medir a temperatura no diodo.
+\end{center}
+
+Colocamos o termopar, usamos um resistor de 680 pois era o que havia disponível, soldamos as pontas do diodo com fios maiores pra facilitar a mobilidade pra medição de temperatura. Como o termopar está junto com o diodo (em toque), movimentamos o diodo e colocamos perto de um ferro de solda, o valor da temperatura aumenta enquanto que o valor da tensão no osciloscópio diminui... isso pois ambos são inversamente proporcionais.
+Na prática usamos 680 ohms e 12.4v
+Tabela desses valores
+
 
 \end{document}

@@ -67,4 +67,17 @@ Na prática usamos 680 ohms e 12.4v
 Tabela desses valores
 
 
+\section{Fonte de tensão simétrica}
+Para a construção da fonte simétrica
+
+Usamos o modelo de transistor TBJ 2N2219 pois o mesmo consegue suportar até 3W de potência. Segundo o professor, o TBJ que estávamos usando só suportava até 800mW, e pela tensão Vce(coletor-base), resultou em aproximadamente 9V, ou seja, supondo que a corrente que passa na carga é de 0.25A (considerando uma carga de 48 ohms), então a potência dissipada no transistor sera $P=V*I$ $P=0.25*9$ $P=2.22W$
+
+\begin{center}
+    \includegraphics[scale=0.5]{images/potenciatrans.png}
+    
+    Imagem 5: potência no resistor 48 ohms é $I=V/R$ $I=12.2/48$ $I=0.25A$, ou seja a potência dissipada no resistor será $P=V*I$ $P=12.2*0.25$ ou $P=48*0.25^2$ então $P=3.05W$
+\end{center}
+
+Então precisamos de um resistor de potência, que suporte 3W ou mais... assim como um tbj de potência.
+
 \end{document}

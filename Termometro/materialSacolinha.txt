@@ -1,0 +1,17 @@
+Sacola 1 (fonte simetrica)
+
+- 8 Diodos Zener
+- 8 Resistores de 1 Ohm
+- 5 Resistores 47 Ohms
+- 3 Resistores de 200 Ohms
+- 4 Capacitores de 4.7uF 25V
+- Transistores 5 TBJ 2n2222a
+- 2 Transistores TBJ 2N2222A Metalico
+- 5 Diodos normais
+- 1 Ampop UA741CN
+
+
+---------
+
+Sacola 2
+

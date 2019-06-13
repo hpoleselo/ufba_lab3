@@ -5,27 +5,32 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
-\title{Projeto Termômetro por um Diodo}
+\title{Construção de Termômetro por um Diodo}
 \author{Henrique Poleselo e Rodrigo Canário}
-\date{UFBA - March 2019}
+\date{Universidade Federal da Bahia - 2019.1}
 
 \begin{document}
 
 \maketitle
 
 \section{Introdução}
-O objetivo deste trabalho é integrar o conhecimento visto na disciplina Dispositivos Eletrônicos sobre diodos e reguladores de tensão juntamente com Eletrônica Digital para a implementação de circuitos em FPGA.
+O objetivo deste trabalho é integrar o conhecimento visto na disciplina Dispositivos Eletrônicos sobre diodos, reguladores de tensão e transistores juntamente com Eletrônica Digital para a implementação de circuitos em FPGA.
 Usando um diodo semicondutor, seguindo a sua função característica do modelo real, conseguimos relacionar temperatura com os níveis de tensão aplicado ao mesmo. Partindo deste principio conseguimos construir um termomêtro digital.
 
 \section{Embasamento Teórico}
  O fenômeno que exploraremos é devido ao efeito Peltier, que com a aplicação de uma tensão, é criado um gradiente de temperatura que varia juntamente com a corrente. (Fenômeno termoelétrico).
 \begin{center}
-    \includegraphics[scale=0.5]{images/img1.png}
+    \includegraphics[scale=0.3]{images/img1.png}
     Imagem 1: Modelo do diodo real
 \end{center}
 
 \section{Estrutura do projeto}
 O trabalho começa no FPGA, onde iremos implementar um algorítmo de Aproximações Sucessivas, i.e um conversor analógico digital. A saída do FPGA (pinos 3.3V) mandando sinais para uma rede R2R
+
+\begin{center}
+    \includegraphics[scale=0.3]{images/sketchprojeto.jpg}
+    Imagem 2: Sketch do projeto
+\end{center}
 
 \section{Simulação Conversor AD}
 Usaremos as redes R-2R, que nos fornecem a possibilidade de conseguir variar níveis de tensão de acordo com as disposições dos resistores, i.e usando uma rede R-2R de 7 bits obteremos: 2(elevado)7 128 valores possiveis pra dividir a tensão de entrada. Como queremos medir de 0 100 graus com passo de 1 grau, então um R-2R de 7 bits será suficiente. Na saída da rede R2R iremos ter um ampop comparador para pegar esses valores de tensão e iremos "filtra-lo". Assim, teremos uma relação tensão-temperatura.
@@ -79,5 +84,13 @@ Usamos o modelo de transistor TBJ 2N2219 pois o mesmo consegue suportar até 3W 
 \end{center}
 
 Então precisamos de um resistor de potência, que suporte 3W ou mais... assim como um tbj de potência.
+
+\section{Implementação do ADC com VHDL}
+O código em VHDL usará uma estrutura de árvore de divisões sucessivas para o "chute" de qual tensão é a presente no diodo, a ávore seguirá a seguinte estrutura:
+
+O chute inicial sendo na metade é mais eficiente pois percorre menos caminho até chegar na tensão que de fato está sendo medida. 
+
+É enviado o sinal para metade da tensão máxima, este então em bits para as 7 portas do FPGA, cada porta tem 3.3V, que será recebido pelo R2R, que irá converter os 7 bits em um valor analógico de tensão, este será uma das entradas do comparador. A outra entrada do comparador é a saída do circuito transdutor (converte o sinal não desejado de tensão para um desejado, i.e condicionado), na faixa em que queremos trabalhar. Assim será comparado no comparador se a tensão enviada pelo FPGA está de acordo com a tensão real no diodo, se sim, uma flag é ativada e calculamos o valor da temperatura no próprio código VHDL segundo a equação que caracterizamos: $v = -1.26*T + 806$
+No caso isolamos $T$ e deixamos em função de $v$, pois o que vamos de fato calcular é a temperatura para uma dada tensão (medida). Como sabemos os bits que enviamos para o R2R, então esta será a tensão para o cálculo. Quando calculado o valor será decodificado para BCD e assim enviado para o display os 2 displays de 7 segmentos. 
 
 \end{document}

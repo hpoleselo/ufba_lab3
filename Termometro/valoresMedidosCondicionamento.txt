@@ -1,7 +1,0 @@
-Valores medidos das Resistencias para o circuito de condicionamento:
-90.2k
-9.8k
-9.87k
-462 ohms
-22.1k
-11.97k

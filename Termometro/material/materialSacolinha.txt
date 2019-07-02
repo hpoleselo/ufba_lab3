@@ -2,8 +2,8 @@ Sacola 1 (fonte simetrica)
 
 - 8 Diodos Zener
 - 8 Resistores de 1 Ohm
-- 5 Resistores 47 Ohms
-- 3 Resistores de 200 Ohms
+- 5 Resistores 47 Ohms (sobrou 1 ou 2)
+- 3 Resistores de 200 Ohms (nao sobrou)
 - 4 Capacitores de 4.7uF 25V
 - Transistores 5 TBJ 2n2222a
 - 2 Transistores TBJ 2N2222A Metalico

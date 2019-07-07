@@ -4,11 +4,11 @@ K3
 cModel Technology
 Z0 dC:\Users\Ricky\Documents\UFBa\8 SEMESTRE\Lab3\Termometro\ufba_lab3\Termometro\interfaceCC\simulation\qsim
 vinterfaceCC
-Z1 !s100 EbLTO^CbN>X2A_j7Gkii>3
-Z2 I8]omkgbd4R0FGU>h3lYe:2
-Z3 V2:Fi0Pjf`9RG?lG8BMLcP3
+Z1 !s100 G]AJj><z4Bz=l?K4lLlBX3
+Z2 I;@]cY^1coL;@L^:[89b8M3
+Z3 Ve6dRNP<T6om9fWi@ooNiP1
 Z4 dC:\Users\Ricky\Documents\UFBa\8 SEMESTRE\Lab3\Termometro\ufba_lab3\Termometro\interfaceCC\simulation\qsim
-Z5 w1562021895
+Z5 w1562356263
 Z6 8interfaceCC.vo
 Z7 FinterfaceCC.vo
 L0 31
@@ -20,66 +20,66 @@ Z10 o-work work -O0
 Z11 ninterface@c@c
 !i10b 1
 !s85 0
-Z12 !s108 1562021896.247000
+Z12 !s108 1562356264.257000
 Z13 !s107 interfaceCC.vo|
 !s101 -O0
 vinterfaceCC_vlg_check_tst
 !i10b 1
-Z14 !s100 Ni7Oz8F]2VAEfgDO]Z=4?2
-Z15 ImVi@Cj5_@:fEXNjCMATHd3
-Z16 VhgXF02mK9dPA;mZ:oV=A41
+Z14 !s100 MW4AHGgE@IM3M8zDAMz]L3
+Z15 IQS;dFRQgd2KoRdUnEHNn32
+Z16 VDHj;<HHOE=lhkCnG=WCWN0
 R4
-R5
-Z17 8interfaceCC.vt
-Z18 FinterfaceCC.vt
+Z17 w1562356261
+Z18 8interfaceCC.vt
+Z19 FinterfaceCC.vt
 L0 59
 R8
 r1
 !s85 0
 31
-Z19 !s108 1562021896.330000
-Z20 !s107 interfaceCC.vt|
-Z21 !s90 -work|work|interfaceCC.vt|
+Z20 !s108 1562356264.472000
+Z21 !s107 interfaceCC.vt|
+Z22 !s90 -work|work|interfaceCC.vt|
 !s101 -O0
 R10
-Z22 ninterface@c@c_vlg_check_tst
+Z23 ninterface@c@c_vlg_check_tst
 vinterfaceCC_vlg_sample_tst
 !i10b 1
-Z23 !s100 FUMBLLbO:BOgWQAboIkYU1
-Z24 IhdLQ[TG0jHOKY>9RAZjIc3
-Z25 VJF[jL=PiRBRnCD0A3@=UF3
+Z24 !s100 <9IT8^_cB1^X[]c5@<[9A2
+Z25 IO10[EFIm_17=2oMg4OeSN1
+Z26 V@bLUdho98Q?5=Qm9^G[gL3
 R4
-R5
 R17
 R18
+R19
 L0 29
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !s101 -O0
 R10
-Z26 ninterface@c@c_vlg_sample_tst
+Z27 ninterface@c@c_vlg_sample_tst
 vinterfaceCC_vlg_vec_tst
 !i10b 1
-!s100 aFAne_;3kzCfgMW8AQIB52
-Ih^PzzdA>jl4ok]J]P9WmX3
-Z27 V14:XCa4bHnN785U7<a2Qf0
+!s100 ;5iCLRchNzEF==U4XC=AF1
+IcV9a;<IP>>mReRTeYN;8b0
+Z28 V14:XCa4bHnN785U7<a2Qf0
 R4
-R5
 R17
 R18
-Z28 L0 271
+R19
+Z29 L0 271
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !s101 -O0
 R10
-Z29 ninterface@c@c_vlg_vec_tst
+Z30 ninterface@c@c_vlg_vec_tst
